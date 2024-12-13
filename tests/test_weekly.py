@@ -2,6 +2,8 @@ from pathlib import Path
 
 import pytest
 
+script_path = Path("./scripts")
+
 
 def get_python_files(directory):
     # Use Path.glob to find all .py files in the directory
@@ -16,23 +18,15 @@ def run_script_code(script_name):
 
 
 class TestExamples:
-    @pytest.mark.weekly
     @pytest.mark.parametrize(
-        ("publication_scripts", "project"),
+        ("publication_scripts"),
         (
             pytest.param(
-                get_python_files(
-                    directory=PATH_PUBLICATIONS_DIRECTORY.joinpath(f"{key}")
-                ),
-                key,
-                id=key,
-            )
-            for key in projects
+                get_python_files(directory=script_path),
+            ),
         ),
     )
-    def test_run_publication_scripts(self, publication_scripts, project):
+    def test_run_scripts(self, publication_scripts):
 
         for script in publication_scripts:
-            run_script_code(
-                PATH_PUBLICATIONS_DIRECTORY.joinpath(f"{project}/{script}.py")
-            )
+            run_script_code(script_path.joinpath(f"{script}.py"))
