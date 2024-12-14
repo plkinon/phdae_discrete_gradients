@@ -36,7 +36,7 @@ postprocessor.postprocess(
 postprocessor.postprocess(quantities=["dissipated_work"], evaluation_points=["n05"])
 
 postprocessor.add_sum_of(
-    quantities=["hamiltonian_difference", "dissipated_work"], name="sum"
+    quantities=["hamiltonian_difference", "dissipated_work"], sum_name="sum"
 )
 
 # Hamiltonian

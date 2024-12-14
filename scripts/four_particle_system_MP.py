@@ -30,7 +30,7 @@ postprocessor_2.postprocess(
     weighted_by_timestepsize=True,
 )
 postprocessor_2.add_sum_of(
-    quantities=["hamiltonian_difference", "dissipated_power"], name="sum"
+    quantities=["hamiltonian_difference", "dissipated_power"], sum_name="sum"
 )
 
 postprocessor_2.results_df["sum"] = abs(postprocessor_2.results_df["sum"])
