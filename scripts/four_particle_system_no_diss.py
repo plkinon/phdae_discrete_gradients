@@ -21,15 +21,15 @@ df_3 = result_3.to_df()
 postprocessor_3 = postprocessors.Postprocessor(manager_3, state_results_df=df_3)
 postprocessor_3.postprocess(
     quantities=["hamiltonian", "hamiltonian"],
-    evaluation_points=["n", "n1-n"],
+    evaluation_points=["current_time", "interval_increment"],
 )
 
 # Hamiltonian
-fig01 = postprocessor_3.visualize(quantities=["hamiltonian"])
+fig01 = postprocessor_3.visualize(quantities=["hamiltonian_current_time"])
 # fig01.show()
 
 fig02 = postprocessor_3.visualize(
-    quantities=["hamiltonian_difference"],
+    quantities=["hamiltonian_interval_increment"],
 )
 # fig02.show()
 

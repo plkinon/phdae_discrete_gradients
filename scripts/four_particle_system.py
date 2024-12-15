@@ -30,34 +30,48 @@ postprocessor.postprocess(
         "constraint",
         "constraint_velocity",
     ],
-    evaluation_points=["n", "n1-n", "n", "n"],
+    evaluation_points=[
+        "current_time",
+        "interval_increment",
+        "current_time",
+        "current_time",
+    ],
 )
 
-postprocessor.postprocess(quantities=["dissipated_work"], evaluation_points=["n05"])
+postprocessor.postprocess(
+    quantities=["dissipated_work"], evaluation_points=["interval_midpoint"]
+)
 
 postprocessor.add_sum_of(
-    quantities=["hamiltonian_difference", "dissipated_work"], sum_name="sum"
+    quantities=["hamiltonian_interval_increment", "dissipated_work_interval_midpoint"],
+    sum_name="sum",
 )
 
 # Hamiltonian
-fig01 = postprocessor.visualize(quantities=["hamiltonian"])
+fig01 = postprocessor.visualize(quantities=["hamiltonian_current_time"])
 # fig01.show()
 
 postprocessor.results_df["sum"] = abs(postprocessor.results_df["sum"])
 
 fig02 = postprocessor.visualize(
-    quantities=["hamiltonian_difference", "dissipated_work", "sum"],
+    quantities=[
+        "hamiltonian_interval_increment",
+        "dissipated_work_interval_midpoint",
+        "sum",
+    ],
 )
 # fig02.show()
 
 fig03 = postprocessor.visualize(quantities=["sum"], y_axis_scale="log")
 # fig03.show()
 
-fig04 = postprocessor.visualize(quantities=["constraint"], y_axis_label="constraints")
+fig04 = postprocessor.visualize(
+    quantities=["constraint_current_time"], y_axis_label="constraints"
+)
 # fig04.show()
 
 fig05 = postprocessor.visualize(
-    quantities=["constraint_velocity"], y_axis_label="velocity constraints"
+    quantities=["constraint_velocity_current_time"], y_axis_label="velocity constraints"
 )
 # fig05.show()
 

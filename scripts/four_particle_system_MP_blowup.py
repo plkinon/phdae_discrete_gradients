@@ -25,11 +25,11 @@ postprocessor_2 = postprocessors.Postprocessor(
 )
 postprocessor_2.postprocess(
     quantities=["hamiltonian"],
-    evaluation_points=["n"],
+    evaluation_points=["current_time"],
 )
 
 fig02 = postprocessor_2.visualize(
-    quantities=["hamiltonian"],
+    quantities=["hamiltonian_current_time"],
 )
 # fig02.show()
 

@@ -21,22 +21,25 @@ df_2 = result_2.to_df()
 postprocessor_2 = postprocessors.Postprocessor(manager_2, state_results_df=df_2)
 postprocessor_2.postprocess(
     quantities=["hamiltonian", "hamiltonian"],
-    evaluation_points=["n", "n1-n"],
+    evaluation_points=["current_time", "interval_increment"],
 )
 
 postprocessor_2.postprocess(
-    quantities=["dissipated_power"],
-    evaluation_points=["n05"],
-    weighted_by_timestepsize=True,
+    quantities=["dissipated_work"], evaluation_points=["interval_midpoint"]
 )
 postprocessor_2.add_sum_of(
-    quantities=["hamiltonian_difference", "dissipated_power"], sum_name="sum"
+    quantities=["hamiltonian_interval_increment", "dissipated_work_interval_midpoint"],
+    sum_name="sum",
 )
 
 postprocessor_2.results_df["sum"] = abs(postprocessor_2.results_df["sum"])
 
 fig02 = postprocessor_2.visualize(
-    quantities=["hamiltonian_difference", "dissipated_power", "sum"],
+    quantities=[
+        "hamiltonian_interval_increment",
+        "dissipated_work_interval_midpoint",
+        "sum",
+    ],
 )
 # fig02.show()
 

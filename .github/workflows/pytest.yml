@@ -1,9 +1,9 @@
 name: Pytest weekly
 
-# on: push
-on:
-  schedule:
-  - cron: 59 23 * * 6   # Schedule triggers every Saturday at 23:59 UTC
+on: push
+# on:
+#   schedule:
+#   - cron: 59 23 * * 6   # Schedule triggers every Saturday at 23:59 UTC
 
 jobs:
   test:
