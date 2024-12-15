@@ -23,23 +23,21 @@ postprocessor = postprocessors.Postprocessor(
     state_results_df=df,
     postprocessed_data_from_integrator=result.postprocessed_from_integrator,
 )
+plotter = postprocessors.Plotter(results_df=postprocessor.results_df)
+
 postprocessor.postprocess(
-    quantities=[
-        "hamiltonian",
-        "hamiltonian",
-        "constraint",
-        "constraint_velocity",
-    ],
-    evaluation_points=[
-        "current_time",
-        "interval_increment",
-        "current_time",
-        "current_time",
-    ],
+    quantities_and_evaluation_points={
+        "hamiltonian": [
+            "current_time",
+            "interval_increment",
+        ],
+        "constraint": ["current_time"],
+        "constraint_velocity": ["current_time"],
+    }
 )
 
 postprocessor.postprocess(
-    quantities=["dissipated_work"], evaluation_points=["interval_midpoint"]
+    quantities_and_evaluation_points={"dissipated_work": ["interval_midpoint"]}
 )
 
 postprocessor.add_sum_of(
@@ -47,30 +45,31 @@ postprocessor.add_sum_of(
     sum_name="sum",
 )
 
-# Hamiltonian
-fig01 = postprocessor.visualize(quantities=["hamiltonian_current_time"])
+fig01 = plotter.visualize_time_evolution(quantities=["hamiltonian_current_time"])
 # fig01.show()
 
-postprocessor.results_df["sum"] = abs(postprocessor.results_df["sum"])
+postprocessor.results_df["abs_sum"] = abs(postprocessor.results_df["sum"])
 
-fig02 = postprocessor.visualize(
+fig02 = plotter.visualize_time_evolution(
     quantities=[
         "hamiltonian_interval_increment",
         "dissipated_work_interval_midpoint",
-        "sum",
+        "abs_sum",
     ],
 )
 # fig02.show()
 
-fig03 = postprocessor.visualize(quantities=["sum"], y_axis_scale="log")
+fig03 = plotter.visualize_time_evolution(
+    quantities=["abs_sum"], y_axis_scale="log", y_axis_label="abs_sum"
+)
 # fig03.show()
 
-fig04 = postprocessor.visualize(
+fig04 = plotter.visualize_time_evolution(
     quantities=["constraint_current_time"], y_axis_label="constraints"
 )
 # fig04.show()
 
-fig05 = postprocessor.visualize(
+fig05 = plotter.visualize_time_evolution(
     quantities=["constraint_velocity_current_time"], y_axis_label="velocity constraints"
 )
 # fig05.show()

@@ -24,8 +24,9 @@ postprocessor_2 = postprocessors.Postprocessor(
     postprocessed_data_from_integrator=result_2.postprocessed_from_integrator,
 )
 postprocessor_2.postprocess(
-    quantities=["hamiltonian", "hamiltonian"],
-    evaluation_points=["current_time", "interval_increment"],
+    quantities_and_evaluation_points={
+        "hamiltonian": ["current_time", "interval_increment"]
+    }
 )
 
 # postprocessor_2.postprocess(

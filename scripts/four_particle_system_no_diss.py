@@ -20,15 +20,19 @@ result_3 = manager_3.manage(result=result_3)
 df_3 = result_3.to_df()
 postprocessor_3 = postprocessors.Postprocessor(manager_3, state_results_df=df_3)
 postprocessor_3.postprocess(
-    quantities=["hamiltonian", "hamiltonian"],
-    evaluation_points=["current_time", "interval_increment"],
+    quantities_and_evaluation_points={
+        "hamiltonian": ["current_time", "interval_increment"]
+    }
 )
 
+# Plotter object gets result dataframe
+plotter = postprocessors.Plotter(results_df=postprocessor_3.results_df)
+
 # Hamiltonian
-fig01 = postprocessor_3.visualize(quantities=["hamiltonian_current_time"])
+fig01 = plotter.visualize_time_evolution(quantities=["hamiltonian_current_time"])
 # fig01.show()
 
-fig02 = postprocessor_3.visualize(
+fig02 = plotter.visualize_time_evolution(
     quantities=["hamiltonian_interval_increment"],
 )
 # fig02.show()
