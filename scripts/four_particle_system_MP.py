@@ -18,32 +18,36 @@ result_2 = pydykit.results.Result(manager=manager_2)
 result_2 = manager_2.manage(result=result_2)
 
 df_2 = result_2.to_df()
-postprocessor_2 = postprocessors.Postprocessor(manager_2, state_results_df=df_2)
+postprocessor_2 = postprocessors.Postprocessor(
+    manager_2,
+    state_results_df=df_2,
+    postprocessed_data_from_integrator=result_2.postprocessed_from_integrator,
+)
 postprocessor_2.postprocess(
     quantities=["hamiltonian", "hamiltonian"],
     evaluation_points=["current_time", "interval_increment"],
 )
 
-postprocessor_2.postprocess(
-    quantities=["dissipated_work"], evaluation_points=["interval_midpoint"]
-)
-postprocessor_2.add_sum_of(
-    quantities=["hamiltonian_interval_increment", "dissipated_work_interval_midpoint"],
-    sum_name="sum",
-)
+# postprocessor_2.postprocess(
+#     quantities=["dissipated_work"], evaluation_points=["interval_midpoint"]
+# )
+# postprocessor_2.add_sum_of(
+#     quantities=["hamiltonian_interval_increment", "dissipated_work_interval_midpoint"],
+#     sum_name="sum",
+# )
 
-postprocessor_2.results_df["sum"] = abs(postprocessor_2.results_df["sum"])
+# postprocessor_2.results_df["sum"] = abs(postprocessor_2.results_df["sum"])
 
-fig02 = postprocessor_2.visualize(
-    quantities=[
-        "hamiltonian_interval_increment",
-        "dissipated_work_interval_midpoint",
-        "sum",
-    ],
-)
+# fig02 = postprocessor_2.visualize(
+#     quantities=[
+#         "hamiltonian_interval_increment",
+#         "dissipated_work_interval_midpoint",
+#         "sum",
+#     ],
+# )
 # fig02.show()
 
-fig03 = postprocessor_2.visualize(quantities=["sum"], y_axis_scale="log")
+# fig03 = postprocessor_2.visualize(quantities=["sum"], y_axis_scale="log")
 # fig03.show()
 
 # postprocessor_2.results_df.to_csv(
