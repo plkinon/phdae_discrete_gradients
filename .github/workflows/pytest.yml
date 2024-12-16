@@ -33,7 +33,7 @@ jobs:
     - name: Install package
       working-directory: .
       run: |
-        python -m pip install git+ssh://git@github.com/pydykit/pydykit.git@postprocessing_advanced#egg=pydykit
+        python -m pip install git+ssh://git@github.com/pydykit/pydykit.git#egg=pydykit
 
     - name: Pytest
       working-directory: .

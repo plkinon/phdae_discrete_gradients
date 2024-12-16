@@ -12,7 +12,7 @@
 2. Following [this discussion](https://stackoverflow.com/questions/4830856/is-it-possible-to-use-pip-to-install-a-package-from-a-private-github-repository) we install the pydykit from private repo (currently with specific branch):
 
    ```bash
-   pip install git+ssh://git@github.com/pydykit/pydykit.git@postprocessing_advanced
+   pip install git+ssh://git@github.com/pydykit/pydykit.git
    ```
 
 3. Remember to change this as soon as pydykit is open.
