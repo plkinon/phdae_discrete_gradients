@@ -22,32 +22,39 @@ postprocessor_2 = postprocessors.Postprocessor(
     manager_2,
     state_results_df=df_2,
 )
+
+plotter = postprocessors.Plotter(results_df=postprocessor_2.results_df)
+
+
 postprocessor_2.postprocess(
     quantities_and_evaluation_points={
         "hamiltonian": ["current_time", "interval_increment"]
     }
 )
 
-# postprocessor_2.postprocess(
-#     quantities=["dissipated_work"], evaluation_points=["interval_midpoint"]
-# )
-# postprocessor_2.add_sum_of(
-#     quantities=["hamiltonian_interval_increment", "dissipated_work_interval_midpoint"],
-#     sum_name="sum",
-# )
+fig01 = plotter.visualize_time_evolution(quantities=["hamiltonian_current_time"])
+fig01.show()
 
-# postprocessor_2.results_df["sum"] = abs(postprocessor_2.results_df["sum"])
+postprocessor_2.postprocess(
+    quantities_and_evaluation_points={"dissipated_work": ["interval_midpoint"]}
+)
+postprocessor_2.add_sum_of(
+    quantities=["hamiltonian_interval_increment", "dissipated_work_interval_midpoint"],
+    sum_name="sum",
+)
 
-# fig02 = postprocessor_2.visualize(
-#     quantities=[
-#         "hamiltonian_interval_increment",
-#         "dissipated_work_interval_midpoint",
-#         "sum",
-#     ],
-# )
+postprocessor_2.results_df["sum"] = abs(postprocessor_2.results_df["sum"])
+
+fig02 = plotter.visualize_time_evolution(
+    quantities=[
+        "hamiltonian_interval_increment",
+        "dissipated_work_interval_midpoint",
+        "sum",
+    ],
+)
 # fig02.show()
 
-# fig03 = postprocessor_2.visualize(quantities=["sum"], y_axis_scale="log")
+fig03 = plotter.visualize_time_evolution(quantities=["sum"], y_axis_scale="log")
 # fig03.show()
 
 # postprocessor_2.results_df.to_csv(
