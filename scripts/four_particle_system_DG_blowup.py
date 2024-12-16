@@ -21,14 +21,15 @@ df_2 = result_2.to_df()
 postprocessor_2 = postprocessors.Postprocessor(
     manager_2,
     state_results_df=df_2,
-    postprocessed_data_from_integrator=result_2.postprocessed_from_integrator,
-)
-postprocessor_2.postprocess(
-    quantities=["hamiltonian"],
-    evaluation_points=["current_time"],
 )
 
-fig02 = postprocessor_2.visualize(
+plotter = postprocessors.Plotter(results_df=postprocessor_2.results_df)
+
+postprocessor_2.postprocess(
+    quantities_and_evaluation_points={"hamiltonian": ["current_time"]}
+)
+
+fig02 = plotter.visualize_time_evolution(
     quantities=["hamiltonian_current_time"],
 )
 # fig02.show()
