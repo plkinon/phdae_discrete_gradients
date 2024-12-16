@@ -21,7 +21,6 @@ df_2 = result_2.to_df()
 postprocessor_2 = postprocessors.Postprocessor(
     manager_2,
     state_results_df=df_2,
-    postprocessed_data_from_integrator=result_2.postprocessed_from_integrator,
 )
 postprocessor_2.postprocess(
     quantities_and_evaluation_points={

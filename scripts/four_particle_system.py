@@ -21,7 +21,6 @@ df = result.to_df()
 postprocessor = postprocessors.Postprocessor(
     manager,
     state_results_df=df,
-    postprocessed_data_from_integrator=result.postprocessed_from_integrator,
 )
 plotter = postprocessors.Plotter(results_df=postprocessor.results_df)
 
