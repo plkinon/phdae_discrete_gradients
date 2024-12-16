@@ -9,13 +9,18 @@
    source .venv/bin/activate
    ```
 
-2. Following [this discussion](https://stackoverflow.com/questions/4830856/is-it-possible-to-use-pip-to-install-a-package-from-a-private-github-repository) we install the pydykit from private repo (currently with specific branch):
+2. Install and use pre-commit
+
+   ```bash
+   pip install pre-commit
+   pre-commit install
+   ```
+
+3. Following [this discussion](https://stackoverflow.com/questions/4830856/is-it-possible-to-use-pip-to-install-a-package-from-a-private-github-repository) we install the pydykit from private repo (currently with specific branch):
 
    ```bash
    pip install git+ssh://git@github.com/pydykit/pydykit.git
    ```
-
-3. Remember to change this as soon as pydykit is open.
 
 4. Run your script:
    ```bash
