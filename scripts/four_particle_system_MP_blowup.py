@@ -4,35 +4,33 @@ import pydykit.systems_port_hamiltonian as phs
 
 name = "four_particle_system_MP_blowup"
 
-manager_2 = pydykit.managers.Manager()
+manager = pydykit.managers.Manager()
 
-path_config_file_2 = f"./input_files/{name}.yml"
+path_config_file = f"./input_files/{name}.yml"
 
-manager_2.configure_from_path(path=path_config_file_2)
+manager.configure_from_path(path=path_config_file)
 
-porthamiltonian_system_2 = phs.PortHamiltonianMBS(manager=manager_2)
+porthamiltonian_system = phs.PortHamiltonianMBS(manager=manager)
 # creates an instance of PHS with attribute MBS
-manager_2.system = porthamiltonian_system_2
+manager.system = porthamiltonian_system
 
-result_2 = pydykit.results.Result(manager=manager_2)
-result_2 = manager_2.manage(result=result_2)
+result = pydykit.results.Result(manager=manager)
+result = manager.manage(result=result)
 
-df_2 = result_2.to_df()
-postprocessor_2 = postprocessors.Postprocessor(
-    manager_2,
-    state_results_df=df_2,
+df = result.to_df()
+postprocessor = postprocessors.Postprocessor(
+    manager,
+    state_results_df=df,
 )
-plotter = postprocessors.Plotter(results_df=postprocessor_2.results_df)
+plotter = postprocessors.Plotter(results_df=postprocessor.results_df)
 
-postprocessor_2.postprocess(
+postprocessor.postprocess(
     quantities_and_evaluation_points={"hamiltonian": ["current_time"]}
 )
 
-fig02 = plotter.visualize_time_evolution(
+fig = plotter.visualize_time_evolution(
     quantities=["hamiltonian_current_time"],
 )
-# fig02.show()
+fig.show()
 
-# postprocessor_2.results_df.to_csv(
-#     f"./test/publications/{project}/{name}.csv", index=False
-# )
+postprocessor.results_df.to_csv(f"./results/{name}.csv", index=False)
