@@ -73,4 +73,4 @@ fig05 = plotter.visualize_time_evolution(
 )
 fig05.show()
 
-# postprocessor.results_df.to_csv(f"./results/{name}.csv", index=False)
+postprocessor.results_df.to_csv(f"./results/{name}.csv", index=False)
