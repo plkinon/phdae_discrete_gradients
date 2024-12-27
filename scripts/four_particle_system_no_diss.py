@@ -4,39 +4,37 @@ import pydykit.systems_port_hamiltonian as phs
 
 name = "four_particle_system_no_diss"
 
-manager_3 = pydykit.managers.Manager()
+manager = pydykit.managers.Manager()
 
-path_config_file_3 = f"./input_files/{name}.yml"
+path_config_file = f"./input_files/{name}.yml"
 
-manager_3.configure_from_path(path=path_config_file_3)
+manager.configure_from_path(path=path_config_file)
 
-porthamiltonian_system_3 = phs.PortHamiltonianMBS(manager=manager_3)
+porthamiltonian_system = phs.PortHamiltonianMBS(manager=manager)
 # creates an instance of PHS with attribute MBS
-manager_3.system = porthamiltonian_system_3
+manager.system = porthamiltonian_system
 
-result_3 = pydykit.results.Result(manager=manager_3)
-result_3 = manager_3.manage(result=result_3)
+result = pydykit.results.Result(manager=manager)
+result_3 = manager.manage(result=result)
 
-df_3 = result_3.to_df()
-postprocessor_3 = postprocessors.Postprocessor(manager_3, state_results_df=df_3)
-postprocessor_3.postprocess(
+df = result.to_df()
+postprocessor = postprocessors.Postprocessor(manager, state_results_df=df)
+postprocessor.postprocess(
     quantities_and_evaluation_points={
         "hamiltonian": ["current_time", "interval_increment"]
     }
 )
 
 # Plotter object gets result dataframe
-plotter = postprocessors.Plotter(results_df=postprocessor_3.results_df)
+plotter = postprocessors.Plotter(results_df=postprocessor.results_df)
 
 # Hamiltonian
 fig01 = plotter.visualize_time_evolution(quantities=["hamiltonian_current_time"])
-# fig01.show()
+fig01.show()
 
 fig02 = plotter.visualize_time_evolution(
     quantities=["hamiltonian_interval_increment"],
 )
-# fig02.show()
+fig02.show()
 
-# postprocessor_3.results_df.to_csv(
-#     f"./test/publications/{project}/{name}.csv", index=False
-# )
+postprocessor.results_df.to_csv(f"./results/{name}.csv", index=False)
