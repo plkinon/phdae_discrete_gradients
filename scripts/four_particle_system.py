@@ -45,7 +45,7 @@ postprocessor.add_sum_of(
 )
 
 fig01 = plotter.visualize_time_evolution(quantities=["hamiltonian_current_time"])
-# fig01.show()
+fig01.show()
 
 postprocessor.results_df["abs_sum"] = abs(postprocessor.results_df["sum"])
 
@@ -56,23 +56,21 @@ fig02 = plotter.visualize_time_evolution(
         "abs_sum",
     ],
 )
-# fig02.show()
+fig02.show()
 
 fig03 = plotter.visualize_time_evolution(
     quantities=["abs_sum"], y_axis_scale="log", y_axis_label="abs_sum"
 )
-# fig03.show()
+fig03.show()
 
 fig04 = plotter.visualize_time_evolution(
     quantities=["constraint_current_time"], y_axis_label="constraints"
 )
-# fig04.show()
+fig04.show()
 
 fig05 = plotter.visualize_time_evolution(
     quantities=["constraint_velocity_current_time"], y_axis_label="velocity constraints"
 )
-# fig05.show()
+fig05.show()
 
-# postprocessor.results_df.to_csv(
-#     f"./test/publications/{project}/{name}.csv", index=False
-# )
+# postprocessor.results_df.to_csv(f"./results/{name}.csv", index=False)
