@@ -2,7 +2,7 @@ import pydykit
 import pydykit.postprocessors as postprocessors
 import pydykit.systems_port_hamiltonian as phs
 
-name = "four_particle_system_MP_blowup"
+name = "four_particle_system_DG_larger_h"
 
 manager = pydykit.managers.Manager()
 
@@ -22,6 +22,7 @@ postprocessor = postprocessors.Postprocessor(
     manager,
     state_results_df=df,
 )
+
 plotter = postprocessors.Plotter(results_df=postprocessor.results_df)
 
 postprocessor.postprocess(
