@@ -71,7 +71,7 @@ end = reference_timestepper.end
 # Define the timestep sizes to compute
 all_timestep_sizes = [0.01, 0.005, 0.002, 0.001]
 
-integrator = "DiscreteGradientPHDAE"  # "MidpointPH"  # "DiscreteGradientPHDAE"
+integrator = "DiscreteGradientPHDAE"  # "MidpointPH"
 
 for timestep_size in all_timestep_sizes:
 

@@ -2,7 +2,7 @@ import pydykit
 import pydykit.postprocessors as postprocessors
 import pydykit.systems_port_hamiltonian as phs
 
-name = "four_particle_system_no_diss"
+name = "four_particle_system_DG_no_diss"
 
 manager = pydykit.managers.Manager()
 
