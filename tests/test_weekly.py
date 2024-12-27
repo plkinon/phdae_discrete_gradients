@@ -19,12 +19,6 @@ def load_file_as_module(name, location):
     return module
 
 
-# def run_script_code(script_name):
-#     with open(script_name) as file:
-#         script_content = file.read()
-#     exec(script_content)
-
-
 class TestExamples:
     @pytest.mark.parametrize(
         ("publication_scripts"),
