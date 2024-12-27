@@ -43,7 +43,8 @@ and cite the [paper given above][url_article] and the latest [Zenodo-DOI][url_la
    pip install git+ssh://git@github.com/pydykit/pydykit.git
    ```
 
-5. Optional: Alternatively, install pydykit from [![PyPI](https://badge.fury.io/py/planarfibers.svg)][url_pypi_this_package]
+5. Optional: Alternatively, install pydykit from
+<!-- [![PyPI](https://badge.fury.io/py/planarfibers.svg)][url_pypi_this_package] -->
 ```bash
 pip install pydykit
 ```
@@ -58,7 +59,8 @@ In the terminal run your desired script:
 ## Acknowledgements
 
 The research documented in this repository has been funded by the
-[German Research Foundation (DFG, Deutsche Forschungsgemeinschaft)][dfg_website] - project number [255730231][dfg_project].
+[German Research Foundation (DFG, Deutsche Forschungsgemeinschaft)][dfg_website] - project number
+<!-- [255730231][dfg_project]. -->
 
 [dfg_website]: https://www.dfg.de/
 <!-- [dfg_project]: https://gepris.dfg.de/gepris/projekt/255730231 -->
