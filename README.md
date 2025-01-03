@@ -1,8 +1,7 @@
-<!-- [![PyPI version](https://badge.fury.io/py/planarfibers.svg)][url_pypi_this_package] -->
+[![PyPI version](https://badge.fury.io/py/pydykit.svg)][url_pypi_this_package]
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 <!-- [![DOI](https://zenodo.org/badge/440932364.svg)][url_latest_doi] -->
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-<!-- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/plkinon/phdae_discrete_gradients/HEAD) -->
 
 
 # `PHDAEDiscreteGradients`
@@ -28,8 +27,8 @@ and cite the [paper given above][url_article] and the latest [Zenodo-DOI][url_la
 
 ## Installation
 
-1. [Clone][url_how_to_clone] this repository to your machine
-2. Open a terminal and navigate to your local clone
+1. [Clone][url_how_to_clone] this repository to your machine.
+2. Open a terminal and navigate to your local clone.
 3. Create a new [virtual environment][url_env_python] and activate it. We recommend using `venv`:
 
    ```bash
@@ -37,21 +36,15 @@ and cite the [paper given above][url_article] and the latest [Zenodo-DOI][url_la
    source .venv/bin/activate
    ```
 
-4. Following [this discussion](https://stackoverflow.com/questions/4830856/is-it-possible-to-use-pip-to-install-a-package-from-a-private-github-repository) we install [pydykit][pydykit_repo] from private repo:
-
-   ```bash
-   pip install git+ssh://git@github.com/pydykit/pydykit.git
-   ```
-
-5. Optional: Alternatively, install pydykit from
-<!-- [![PyPI](https://badge.fury.io/py/planarfibers.svg)][url_pypi_this_package] -->
+4. Install pydykit from
+[![PyPI](https://badge.fury.io/py/pydykit.svg)][url_pypi_this_package]
 ```bash
 pip install pydykit
 ```
 
 
 ## Run scripts
-In the terminal run your desired script:
+In the terminal, with the activated environment, run your desired script:
    ```bash
    python scripts/*.py
    ```
@@ -72,6 +65,6 @@ The research documented in this repository has been funded by the
 
 [url_env_python]: https://docs.python.org/3/tutorial/venv.html
 
-<!-- [url_pypi_this_package]: https://pypi.org/project/planarfibers/ -->
+[url_pypi_this_package]: https://pypi.org/project/pydykit/
 
 [pydykit_repo]: https://github.com/pydykit/pydykit/
