@@ -1,31 +1,45 @@
+[![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)](https://arxiv.org/abs/1234.56789)
 [![PyPI version](https://badge.fury.io/py/pydykit.svg)][url_pypi_this_package]
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 <!-- [![DOI](https://zenodo.org/badge/440932364.svg)][url_latest_doi] -->
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-
 # `PHDAEDiscreteGradients`
 
-This repository contains the source code, which contains selected contributions of the paper
+This repository contains the source code, which contains selected contributions of the paper [Kinon, P. L., Morandin, R. & Schulze, P. (2025): Discrete-gradient methods for port-Hamiltonian descriptor systems.][url_article].
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li><a href="#citation">Citation</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
+
+## Citation
+
+If you found our project helpful or you have used it in your academic work, please consider citing it:
 
 ```bibtex
-@article{KinonMorandinSchulze2025,
-    author = {Philipp L. Kinon, Riccardo Morandin and Philipp Schulze},
-    title = {Discrete-gradient methods of port-Hamiltonian descriptor systems},
-    journal = {arXiv},
-    ...
-    doi = {...},
-    url = {...}
+@article{kinon_morandin_schulze_2025,
+  title   = {Discrete gradient methods for port-Hamiltonian descriptor systems},
+  author  = {Kinon, Philipp L. and Morandin, Riccardo and Schulze, Philipp},
+  year    = {2025},
+  journal = {ArXiv e-print XY},
+  doi     = {DOI}
 }
 ```
-
-and largely depends on the [`pydykit` package][pydykit_repo].
-
+and the latest [Zenodo-DOI][url_latest_doi].
 Please see [license][url_license],
-[acknowledgment](#acknowledgment)
-and cite the [paper given above][url_article] and the latest [Zenodo-DOI][url_latest_doi].
+[acknowledgements](#acknowledgements).
+
 
 ## Installation
+
+The implementation of time integrators and example systems has been done in the package [`pydykit`][pydykit_repo], which is used here.
 
 1. [Clone][url_how_to_clone] this repository to your machine.
 2. Open a terminal and navigate to your local clone.
@@ -43,11 +57,21 @@ pip install pydykit
 ```
 
 
-## Run scripts
-In the terminal, with the activated environment, run your desired script:
+## Usage
+
+This repo can be used in two ways:
+
+1. For validation:
+
+   Extract your desired result data as `.csv`-file data from the [results folder](results).
+
+2. For verification:
+
+   In the terminal, with the activated environment, run your desired script:
    ```bash
    python scripts/*.py
    ```
+   This will overwrite the correspoding results file in the [results folder](results).
 
 ## Acknowledgements
 
