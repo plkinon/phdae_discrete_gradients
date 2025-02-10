@@ -1,4 +1,5 @@
 import pydykit
+import pydykit.plotters as plotters
 import pydykit.postprocessors as postprocessors
 import pydykit.systems_port_hamiltonian as phs
 
@@ -23,7 +24,7 @@ postprocessor = postprocessors.Postprocessor(
     state_results_df=df,
 )
 
-plotter = postprocessors.Plotter(results_df=postprocessor.results_df)
+plotter = plotters.Plotter(results_df=postprocessor.results_df)
 
 
 postprocessor.postprocess(

@@ -1,4 +1,5 @@
 import pydykit
+import pydykit.plotters as plotters
 import pydykit.postprocessors as postprocessors
 import pydykit.systems_port_hamiltonian as phs
 
@@ -26,7 +27,7 @@ postprocessor.postprocess(
 )
 
 # Plotter object gets result dataframe
-plotter = postprocessors.Plotter(results_df=postprocessor.results_df)
+plotter = plotters.Plotter(results_df=postprocessor.results_df)
 
 # Hamiltonian
 fig01 = plotter.visualize_time_evolution(quantities=["hamiltonian_current_time"])
