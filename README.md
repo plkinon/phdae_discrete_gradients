@@ -1,7 +1,7 @@
-[![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)](https://arxiv.org/abs/1234.56789)
 [![PyPI version](https://badge.fury.io/py/pydykit.svg)][url_pypi_this_package]
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+<!-- [![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)](https://arxiv.org/abs/1234.56789) -->
 <!-- [![DOI](https://zenodo.org/badge/440932364.svg)][url_latest_doi] -->
 
 # `PHDAEDiscreteGradients`
