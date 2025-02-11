@@ -93,6 +93,6 @@ The research documented in this repository has been funded by the
 
 [url_env_python]: https://docs.python.org/3/tutorial/venv.html
 
-[url_pypi_this_package]: https://pypi.org/project/pydykit/0.0.6/
+[url_pypi_this_package]: https://pypi.org/project/pydykit/0.0.6/?cacheSeconds=0
 
 [pydykit_repo]: https://github.com/pydykit/pydykit/
