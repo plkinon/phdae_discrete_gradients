@@ -53,7 +53,7 @@ The implementation of time integrators and example systems has been done in the 
 4. Install pydykit from
 [![PyPI](https://badge.fury.io/py/pydykit.svg)][url_pypi_this_package]
 ```bash
-pip install pydykit
+pip install pydykit==0.0.6
 ```
 
 

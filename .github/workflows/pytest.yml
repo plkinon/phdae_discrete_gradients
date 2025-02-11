@@ -28,7 +28,7 @@ jobs:
     - name: Install package
       working-directory: .
       run: |
-        pip install pydykit
+        pip install pydykit==0.0.6
 
     - name: Pytest
       working-directory: .
