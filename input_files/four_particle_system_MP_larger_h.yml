@@ -1,4 +1,4 @@
-name: four_particle_system_ph_discrete_gradient_dissipative
+name: four_particle_system_ph_midpoint_dissipative
 system:
   class_name: ParticleSystem
   nbr_spatial_dimensions: 3
