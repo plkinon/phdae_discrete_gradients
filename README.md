@@ -75,7 +75,7 @@ This repo can be used in two ways:
    ```bash
    python scripts/*.py
    ```
-   This will overwrite the correspoding results file in the [results folder](results).
+   This will overwrite the correspoding results file in the [results folder](results). For the error analysis choose the desired integration scheme in the respective script.
 
 <!-- ## Acknowledgements
 
