@@ -1,13 +1,13 @@
-[![PyPI version](https://badge.fury.io/py/pydykit.svg)][url_pypi_this_package]
+[![arXiv](https://img.shields.io/badge/arXiv-2505.18810-b31b1b.svg)](https://arxiv.org/abs/2505.18810)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15007242.svg)](https://doi.org/10.5281/zenodo.15007242)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![PyPI version](https://badge.fury.io/py/pydykit.svg)][url_pypi_this_package]
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-<!-- [![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)](https://arxiv.org/abs/1234.56789) -->
-<!-- [![DOI](https://zenodo.org/badge/440932364.svg)][url_latest_doi] -->
 
 # `PHDAEDiscreteGradients`
 
 This repository contains the source code, which contains selected contributions of the paper
-_Kinon, P. L., Morandin, R. & Schulze, P. (2025): Discrete-gradient methods for port-Hamiltonian descriptor systems_.
+_Kinon, P. L., Morandin, R. & Schulze, P. (2025): [Discrete gradient methods for port-Hamiltonian differential-algebraic equations](https://arxiv.org/abs/2505.18810)_.
 <!-- [Kinon, P. L., Morandin, R. & Schulze, P. (2025): Discrete-gradient methods for port-Hamiltonian descriptor systems][url_article]. -->
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -25,10 +25,14 @@ _Kinon, P. L., Morandin, R. & Schulze, P. (2025): Discrete-gradient methods for 
 If you found our project helpful or you have used it in your academic work, please consider citing it:
 
 ```bibtex
-@article{kinon_morandin_schulze_2025,
-  title   = {Discrete gradient methods for port-Hamiltonian descriptor systems},
-  author  = {Kinon, Philipp L. and Morandin, Riccardo and Schulze, Philipp},
-  year    = {2025}
+@misc{kinon_morandin_schulze_2025,
+  title={Discrete gradient methods for port-Hamiltonian differential-algebraic equations}, 
+  author={Philipp L. Kinon and Riccardo Morandin and Philipp Schulze},
+  year={2025},
+  eprint={2505.18810},
+  archivePrefix={arXiv},
+  primaryClass={math.NA},
+  url={https://arxiv.org/abs/2505.18810}, 
 }
 ```
   <!-- ,
@@ -36,7 +40,7 @@ If you found our project helpful or you have used it in your academic work, plea
   doi     = {DOI} -->
 <!-- } -->
 
-<!-- and the latest [Zenodo-DOI][url_latest_doi]. -->
+and the latest [Zenodo-DOI][url_latest_doi].
 Please see [license][url_license].
 <!-- and [acknowledgements](#acknowledgements). -->
 
@@ -81,14 +85,14 @@ This repo can be used in two ways:
 
 The research documented in this repository has been funded by the
 [German Research Foundation (DFG, Deutsche Forschungsgemeinschaft)][dfg_website] - project number -->
-<!-- [255730231][dfg_project]. -->
+<!-- [12345678][dfg_project]. -->
 
 [dfg_website]: https://www.dfg.de/
-<!-- [dfg_project]: https://gepris.dfg.de/gepris/projekt/255730231 -->
+<!-- [dfg_project]: https://gepris.dfg.de/gepris/projekt/12345678 -->
 
 [url_license]: LICENSE
-<!-- [url_latest_doi]: https://zenodo.org/badge/latestdoi/440932364 -->
-<!-- [url_article]: https://doi.org/10.1016/j.mechmat.2022.104307 -->
+[url_latest_doi]: https://zenodo.org/records/15007242
+<!-- [url_article]: https://doi.org/... -->
 [url_how_to_clone]: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
 
 [url_env_python]: https://docs.python.org/3/tutorial/venv.html
