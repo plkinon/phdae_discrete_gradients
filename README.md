@@ -1,14 +1,13 @@
-[![arXiv](https://img.shields.io/badge/arXiv-2505.18810-b31b1b.svg)](https://arxiv.org/abs/2505.18810)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15007242.svg)](https://doi.org/10.5281/zenodo.15007242)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15007241.svg)](https://doi.org/10.5281/zenodo.15007241)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PyPI version](https://badge.fury.io/py/pydykit.svg)][url_pypi_this_package]
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 # `PHDAEDiscreteGradients`
 
-This repository contains the source code, which contains selected contributions of the paper
-_Kinon, P. L., Morandin, R. & Schulze, P. (2025): [Discrete gradient methods for port-Hamiltonian differential-algebraic equations](https://arxiv.org/abs/2505.18810)_.
-<!-- [Kinon, P. L., Morandin, R. & Schulze, P. (2025): Discrete-gradient methods for port-Hamiltonian descriptor systems][url_article]. -->
+This repository contains the source code for the open-access journal article
+_Kinon, P. L., Morandin, R. & Schulze, P. (2025): [Discrete gradient methods for port-Hamiltonian differential-algebraic equations](https://doi.org/10.1016/j.apnum.2025.12.006)_.
+
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
@@ -25,25 +24,18 @@ _Kinon, P. L., Morandin, R. & Schulze, P. (2025): [Discrete gradient methods for
 If you found our project helpful or you have used it in your academic work, please consider citing it:
 
 ```bibtex
-@misc{kinon_morandin_schulze_2025,
-  title={Discrete gradient methods for port-Hamiltonian differential-algebraic equations}, 
-  author={Philipp L. Kinon and Riccardo Morandin and Philipp Schulze},
-  year={2025},
-  eprint={2505.18810},
-  archivePrefix={arXiv},
-  primaryClass={math.NA},
-  url={https://arxiv.org/abs/2505.18810}, 
+@article{kinon_morandin_schulze_2025,
+  title   = {Discrete gradient methods for port-Hamiltonian differential-algebraic equations}, 
+  author  = {Philipp L. Kinon and Riccardo Morandin and Philipp Schulze},
+  journal = {Applied Numerical Mathematics},
+  year    = {2025},
+  issn    = {0168-9274},
+  doi     = {https://doi.org/10.1016/j.apnum.2025.12.006},
 }
 ```
-  <!-- ,
-  journal = {ArXiv e-print XY},
-  doi     = {DOI} -->
-<!-- } -->
 
 and the latest [Zenodo-DOI][url_latest_doi].
-Please see [license][url_license].
-<!-- and [acknowledgements](#acknowledgements). -->
-
+Please see the [license][url_license].
 
 ## Installation
 
@@ -81,22 +73,10 @@ This repo can be used in two ways:
    ```
    This will overwrite the correspoding results file in the [results folder](results). For the error analysis choose the desired integration scheme in the respective script.
 
-<!-- ## Acknowledgements
-
-The research documented in this repository has been funded by the
-[German Research Foundation (DFG, Deutsche Forschungsgemeinschaft)][dfg_website] - project number -->
-<!-- [12345678][dfg_project]. -->
-
-[dfg_website]: https://www.dfg.de/
-<!-- [dfg_project]: https://gepris.dfg.de/gepris/projekt/12345678 -->
 
 [url_license]: LICENSE
-[url_latest_doi]: https://zenodo.org/records/15007242
-<!-- [url_article]: https://doi.org/... -->
+[url_latest_doi]: https://zenodo.org/records/15007241
 [url_how_to_clone]: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
-
 [url_env_python]: https://docs.python.org/3/tutorial/venv.html
-
 [url_pypi_this_package]: https://pypi.org/project/pydykit/0.0.6/?cacheSeconds=0
-
 [pydykit_repo]: https://github.com/pydykit/pydykit/
